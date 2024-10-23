@@ -1,4 +1,3 @@
 # PSYC201A
-## Commit test
-
-Third time tests editing on typora. 
+## JsPsych for js assignment
+## Simulation code for tea tasting simulation
