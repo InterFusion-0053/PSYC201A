@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- this is where we can load packages and files that we will use to help us build the experiment -->
+    <!-- let’s give the experiment a title (good style) - but it’s not critical to make things work -->
+    <title>Network Science Tool Identification</title>
+    <script src="https://unpkg.com/jspsych@8.0.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@2.0.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-button-response@2.0.0"></script>
+    <link href="https://unpkg.com/jspsych@8.0.0/css/jspsych.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body></body>
+<script>
+    //this is where we will write JavaScript code to control the experiments
+    const jsPsych = initJsPsych();
+
+    var network_science_keyboard = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: '<img src="net.png" width="300"><p>Which tool is this?</p>',
+        choices: ['n', 'g', 'p'],
+        prompt: "<p>Press (n) for NetworkX, (g) for Gephi, or (p) for Pajek.</p>"
+    };
+
+    // Second trial using jsPsychHtmlButtonResponse
+    var network_science_button = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: '<p>Choose the correct tool:</p>',
+        choices: ['NetworkX', 'Gephi', 'Pajek'],
+        prompt: "<p>Click on the correct option.</p>"
+    };
+
+    // Run the trials in sequence
+    jsPsych.run([network_science_keyboard, network_science_button]);
+
+    //this is where we will write JavaScript code to control the experiments
+</script>
+
+</html>
